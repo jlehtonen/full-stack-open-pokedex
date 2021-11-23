@@ -28,10 +28,10 @@ jobs:
         run: echo "$JOINED_MESSAGES"
       - name: skip in commit messages
         env:
-          COMMIT_MESSAGES_SKIP: ${{ contains(toJson(github.event.commits.*.message), "#skip") }}
+          COMMIT_MESSAGES_SKIP: ${{ contains(toJson(github.event.commits.*.message), '#skip') }}
         run: echo "$COMMIT_MESSAGES_SKIP"
       - name: skip in joined commit messages
         env:
-          JOINED_MESSAGES_SKIP: ${{ contains(join(toJson(github.event.commits.*.message)), "#skip") }}
+          JOINED_MESSAGES_SKIP: ${{ contains(join(toJson(github.event.commits.*.message)), '#skip') }}
         run: echo "$JOINED_MESSAGES_SKIP"
-# Test 9
+# Test 10
