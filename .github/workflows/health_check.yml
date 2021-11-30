@@ -1,9 +1,8 @@
 name: Periodic health check
 
 on:
-  push:
-    branches:
-      - feature
+  schedule:
+    - cron: '0/5 * * * *'
 
 jobs:
   health_check:
