@@ -1,0 +1,15 @@
+name: Periodic health check
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+
+jobs:
+  health_check:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Health check
+        uses: jtalk/url-health-check-action@v2
+        with:
+          url: https://obscure-anchorage-64236.herokuapp.com/health
+    
